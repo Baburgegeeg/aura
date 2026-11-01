@@ -18,7 +18,7 @@
       <nav class="nav-links">
         <a href="#flagships" class="active">Флагманы</a>
         <a href="#customizer">Конфигуратор</a>
-        <a href="#about">Философия</a>
+        <a href="#about">О нас</a>
       </nav>
       <div class="nav-actions">
         <button class="cart-btn" id="openCartBtn">
@@ -33,7 +33,7 @@
     <div class="hero-content">
       <p class="hero-subtitle">Чистая производительность</p>
       <h1 class="hero-title">AURA Workstation I</h1>
-      <p class="hero-description">Создана для сложных инженерных задач и 3D-визуализации. Бескомпромиссная система охлождения и тишина.</p>
+      <p class="hero-description">Создана для сложных инженерных задач и 3D-визуализации. Бескомпромиссная система охлаждения и тишина.</p>
       <div class="hero-actions">
         <button class="btn btn-primary" onclick="addToCart('AURA Workstation I', 4200)">Купить — $4,200</button>
         <a href="#customizer" class="btn btn-secondary">Сконфигурировать</a>
@@ -45,12 +45,13 @@
   <section class="section" id="flagships">
     <div class="container">
       <h2 class="section-title">Готовые системы</h2>
+      <p class="section-subtitle">Профессиональные компьютеры и дисплеи высшего класса.</p>
       <div class="grid">
         <!-- Card 1 -->
         <div class="card">
           <div class="card-image">
             <span class="card-tag">Флагман</span>
-            <div class="placeholder-img">AURA WORKSTATION</div>
+            <img src="images/pc-workstation.png" alt="AURA Workstation I" class="product-img">
           </div>
           <div class="card-body">
             <h3>AURA Workstation I</h3>
@@ -66,7 +67,7 @@
         <div class="card">
           <div class="card-image">
             <span class="card-tag">Экстрим</span>
-            <div class="placeholder-img">AURA STUDIO</div>
+            <img src="images/pc-studio.png" alt="AURA Studio Max" class="product-img">
           </div>
           <div class="card-body">
             <h3>AURA Studio Max</h3>
@@ -82,7 +83,7 @@
         <div class="card">
           <div class="card-image">
             <span class="card-tag">Компакт</span>
-            <div class="placeholder-img">AURA MINI</div>
+            <img src="images/pc-mini.png" alt="AURA Mini X" class="product-img">
           </div>
           <div class="card-body">
             <h3>AURA Mini X</h3>
@@ -90,6 +91,22 @@
             <div class="card-footer">
               <span class="price">$2,950</span>
               <button class="btn-sm" onclick="addToCart('AURA Mini X', 2950)">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card-image">
+            <span class="card-tag">Дисплей</span>
+            <img src="images/monitor-pro.png" alt="AURA Pro Monitor 32" class="product-img">
+          </div>
+          <div class="card-body">
+            <h3>AURA Pro Monitor 32</h3>
+            <p class="card-specs">32" 4K IPS • 144Hz • 100% DCI-P3 • Тонкий алюминий</p>
+            <div class="card-footer">
+              <span class="price">$1,499</span>
+              <button class="btn-sm" onclick="addToCart('AURA Pro Monitor 32', 1499)">В корзину</button>
             </div>
           </div>
         </div>
@@ -105,7 +122,6 @@
 
       <div class="customizer-grid">
         <div class="customizer-controls">
-          <!-- CPU -->
           <div class="config-group">
             <label>Процессор (CPU)</label>
             <select id="cpuSelect" onchange="updateCustomizer()">
@@ -115,7 +131,6 @@
             </select>
           </div>
 
-          <!-- GPU -->
           <div class="config-group">
             <label>Видеокарта (GPU)</label>
             <select id="gpuSelect" onchange="updateCustomizer()">
@@ -125,7 +140,6 @@
             </select>
           </div>
 
-          <!-- RAM -->
           <div class="config-group">
             <label>Оперативная память (RAM)</label>
             <select id="ramSelect" onchange="updateCustomizer()">
@@ -135,7 +149,6 @@
             </select>
           </div>
 
-          <!-- Storage -->
           <div class="config-group">
             <label>Накопитель (SSD)</label>
             <select id="ssdSelect" onchange="updateCustomizer()">
@@ -149,9 +162,7 @@
         <div class="customizer-summary">
           <div class="summary-card">
             <h3>Ваша конфигурация</h3>
-            <ul id="configSummaryList">
-              <!-- Dynamically populated -->
-            </ul>
+            <ul id="configSummaryList"></ul>
             <div class="summary-total">
               <span>Итоговая стоимость:</span>
               <span id="customPrice" class="total-amount">$2,988</span>
@@ -163,28 +174,40 @@
     </div>
   </section>
 
-  <!-- Bento Grid / Features -->
+  <!-- About Section / О нас -->
   <section class="section" id="about">
     <div class="container">
-      <h2 class="section-title">Превосходство в деталях</h2>
+      <h2 class="section-title">О нас и философия AURA</h2>
+      <p class="section-subtitle">Создаем бескомпромиссные вычислительные системы, вдохновленные минимализмом и чистой производительностью.</p>
+      
       <div class="bento-grid">
         <div class="bento-card bento-wide">
+<h3>Флагманский шоурум в Ташкенте</h3>
+          <p>Мы верим, что мощь должна выглядеть безупречно. Посетите наше пространство, чтобы лично протестировать системы AURA, оценить бесшумность жидкостного охлаждения и качество материалов.</p>
+          <div style="margin-top: 16px; font-size: 14px; color: var(--text-primary); font-weight: 500;">
+            📍 <strong>Адрес:</strong> Tashkent City Park, Блок B1, Ташкент, Узбекистан<br>
+            🕒 <strong>Режим работы:</strong> Ежедневно с 10:00 до 22:00
+          </div>
+        </div>
+        <div class="bento-card">
           <h3>Инженерная акустика</h3>
-          <p>Каждая система AURA проходит настройку воздушного потока. Низкий уровень шума даже при максимальной нагрузке.</p>
+          <p>Каждая система проходит калибровку воздушных потоков для идеальной тишины под нагрузкой.</p>
         </div>
         <div class="bento-card">
           <h3>Гарантия 3 года</h3>
-          <p>Полное сервисное обслуживание и замена комплектующих.</p>
-        </div>
-        <div class="bento-card">
-          <h3>Кастомные кабели</h3>
-          <p>Аккуратный кабель-менеджмент ручной сборки.</p>
+          <p>Полное техническое сопровождение, сервис и оперативная замена комплектующих.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Slide-over Cart Drawer -->
+  <!-- Image Viewer Modal -->
+  <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <!-- Cart Drawer -->
   <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
   <div class="cart-drawer" id="cartDrawer">
     <div class="cart-header">
