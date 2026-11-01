@@ -1,4 +1,47 @@
-<!-- Product Catalog -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — High Performance Systems</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sticky Glass Header -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">AURA</a>
+      <nav class="nav-links">
+        <a href="#flagships" class="active">Флагманы</a>
+        <a href="#customizer">Конфигуратор</a>
+        <a href="#about">О нас</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="cart-btn" id="openCartBtn">
+          Корзина <span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-subtitle">Чистая производительность</p>
+      <h1 class="hero-title">AURA Workstation I</h1>
+      <p class="hero-description">Создана для сложных инженерных задач и 3D-визуализации. Бескомпромиссная система охлаждения и тишина.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" onclick="addToCart('AURA Workstation I', 4200)">Купить — $4,200</button>
+        <a href="#customizer" class="btn btn-secondary">Сконфигурировать</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalog -->
   <section class="section" id="flagships">
     <div class="container">
       <h2 class="section-title">Готовые системы</h2>
@@ -6,9 +49,9 @@
       <div class="grid">
         <!-- Card 1 -->
         <div class="card">
-          <div class="card-image">
+          <div class="card-image" style="height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f2; border-radius: 12px; position: relative; margin-bottom: 20px;">
             <span class="card-tag">Флагман</span>
-            <img src="pc-workstation.png" alt="AURA Workstation I" class="product-img">
+            <img src="pc-workstation.png" alt="AURA Workstation I" class="product-img" style="width: 100%; height: 100%; object-fit: contain; padding: 10px; cursor: pointer;">
           </div>
           <div class="card-body">
             <h3>AURA Workstation I</h3>
@@ -22,9 +65,9 @@
 
         <!-- Card 2 -->
         <div class="card">
-          <div class="card-image">
+          <div class="card-image" style="height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f2; border-radius: 12px; position: relative; margin-bottom: 20px;">
             <span class="card-tag">Экстрим</span>
-            <img src="pc-studio.png" alt="AURA Studio Max" class="product-img">
+            <img src="pc-studio.png" alt="AURA Studio Max" class="product-img" style="width: 100%; height: 100%; object-fit: contain; padding: 10px; cursor: pointer;">
           </div>
           <div class="card-body">
             <h3>AURA Studio Max</h3>
@@ -38,9 +81,9 @@
 
         <!-- Card 3 -->
         <div class="card">
-          <div class="card-image">
+          <div class="card-image" style="height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f2; border-radius: 12px; position: relative; margin-bottom: 20px;">
             <span class="card-tag">Компакт</span>
-            <img src="pc-mini.png" alt="AURA Mini X" class="product-img">
+            <img src="pc-mini.png" alt="AURA Mini X" class="product-img" style="width: 100%; height: 100%; object-fit: contain; padding: 10px; cursor: pointer;">
           </div>
           <div class="card-body">
             <h3>AURA Mini X</h3>
@@ -54,9 +97,9 @@
 
         <!-- Card 4 -->
         <div class="card">
-          <div class="card-image">
+          <div class="card-image" style="height: 200px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f2; border-radius: 12px; position: relative; margin-bottom: 20px;">
             <span class="card-tag">Дисплей</span>
-            <img src="monitor-pro.png" alt="AURA Pro Monitor 32" class="product-img">
+            <img src="monitor-pro.png" alt="AURA Pro Monitor 32" class="product-img" style="width: 100%; height: 100%; object-fit: contain; padding: 10px; cursor: pointer;">
           </div>
           <div class="card-body">
             <h3>AURA Pro Monitor 32</h3>
@@ -70,3 +113,119 @@
       </div>
     </div>
   </section>
+
+  <!-- Interactive Customizer -->
+  <section class="section customizer-section" id="customizer">
+    <div class="container">
+      <h2 class="section-title">Конфигуратор AURA Custom</h2>
+      <p class="section-subtitle">Соберите систему под свои задачи с мгновенным расчетом цены.</p>
+
+      <div class="customizer-grid">
+        <div class="customizer-controls">
+          <div class="config-group">
+            <label>Процессор (CPU)</label>
+            <select id="cpuSelect" onchange="updateCustomizer()">
+              <option value="599" data-name="Intel Core i7-14700K">Intel Core i7-14700K (+$599)</option>
+              <option value="799" data-name="Intel Core i9-14900K" selected>Intel Core i9-14900K (+$799)</option>
+              <option value="999" data-name="AMD Ryzen 9 7950X3D">AMD Ryzen 9 7950X3D (+$999)</option>
+            </select>
+          </div>
+
+          <div class="config-group">
+            <label>Видеокарта (GPU)</label>
+            <select id="gpuSelect" onchange="updateCustomizer()">
+              <option value="999" data-name="NVIDIA RTX 4070 Ti Super">NVIDIA RTX 4070 Ti Super (+$999)</option>
+              <option value="1599" data-name="NVIDIA RTX 4080 Super" selected>NVIDIA RTX 4080 Super (+$1,599)</option>
+              <option value="2299" data-name="NVIDIA RTX 4090 24GB">NVIDIA RTX 4090 24GB (+$2,299)</option>
+            </select>
+          </div>
+
+          <div class="config-group">
+            <label>Оперативная память (RAM)</label>
+            <select id="ramSelect" onchange="updateCustomizer()">
+              <option value="180" data-name="32GB DDR5 6000MHz">32GB DDR5 6000MHz (+$180)</option>
+              <option value="350" data-name="64GB DDR5 6000MHz" selected>64GB DDR5 6000MHz (+$350)</option>
+              <option value="680" data-name="128GB DDR5 5600MHz">128GB DDR5 5600MHz (+$680)</option>
+            </select>
+          </div>
+
+          <div class="config-group">
+            <label>Накопитель (SSD)</label>
+            <select id="ssdSelect" onchange="updateCustomizer()">
+              <option value="120" data-name="1TB NVMe Gen4 SSD">1TB NVMe Gen4 SSD (+$120)</option>
+              <option value="240" data-name="2TB NVMe Gen4 SSD" selected>2TB NVMe Gen4 SSD (+$240)</option>
+              <option value="480" data-name="4TB NVMe Gen4 SSD">4TB NVMe Gen4 SSD (+$480)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="customizer-summary">
+          <div class="summary-card">
+            <h3>Ваша конфигурация</h3>
+            <ul id="configSummaryList"></ul>
+            <div class="summary-total">
+              <span>Итоговая стоимость:</span>
+              <span id="customPrice" class="total-amount">$2,988</span>
+            </div>
+            <button class="btn btn-primary full-width" onclick="addCustomToCart()">Добавить сборку в корзину</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section / О нас -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">О нас и философия AURA</h2>
+      <p class="section-subtitle">Создаем бескомпромиссные вычислительные системы, вдохновленные минимализмом и чистой производительностью.</p>
+      
+      <div class="bento-grid">
+        <div class="bento-card bento-wide">
+          <h3>Флагманский шоурум в Ташкенте</h3>
+          <p>Мы верим, что мощь должна выглядеть безупречно. Посетите наше пространство, чтобы лично протестировать системы AURA, оценить бесшумность жидкостного охлаждения и качество материалов.</p>
+          <div style="margin-top: 16px; font-size: 14px; color: var(--text-primary); font-weight: 500;">
+            📍 <strong>Адрес:</strong> Tashkent City Park, Блок B1, Ташкент, Узбекистан<br>
+            🕒 <strong>Режим работы:</strong> Ежедневно с 10:00 до 22:00
+          </div>
+        </div>
+        <div class="bento-card">
+          <h3>Инженерная акустика</h3>
+          <p>Каждая система проходит калибровку воздушных потоков для идеальной тишины под нагрузкой.</p>
+        </div>
+        <div class="bento-card">
+          <h3>Гарантия 3 года</h3>
+          <p>Полное техническое сопровождение, сервис и оперативная замена комплектующих.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Viewer Modal -->
+  <div class="image-modal" id="imageModal" onclick="closeImageModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Ваша корзина</h2>
+      <button class="close-btn" onclick="closeCart()">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItemsContainer">
+      <p class="empty-msg">Корзина пуста</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Итого:</span>
+        <span id="cartTotalAmount">$0</span>
+      </div>
+      <button class="btn btn-primary full-width" onclick="checkout()">Оформить заказ</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
